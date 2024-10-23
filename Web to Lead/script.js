@@ -1,10 +1,18 @@
-function beforesubmit(){
+let captchaChecked = false;
+
+
+function beforesubmit(event){
+    if(captchaChecked){
     let outputdate = document.querySelector(".outputdate");
     let inputdate = document.querySelector(".inputdate");
 console.log('inputdate.value' , inputdate.value);
 
     let formattedDate = new Date(inputdate.value).toLocaleDateString("en-US");
     outputdate.value = formattedDate;
+    }else{
+        alert("Please check the captcha to submit the Lead." ); 
+        event.preventDefault(); // immediately prevent from submission of form
+         }
 }
 
 function timestamp() { 
@@ -18,3 +26,7 @@ function timestamp() {
          } 
         } 
         setInterval(timestamp, 500); 
+
+        function captchaSucess(){
+            captchaChecked = true;
+        }

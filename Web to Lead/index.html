@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web to Lead Form</title>
     <link rel="stylesheet" href="style.css"/>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -19,7 +20,7 @@
     <input type="hidden" name="oid" value="00D7F000007E5tg" />
     <input type="hidden" name="retURL" value="https://biswa23.github.io/Web-to-Lead-Form-2/thanks.html" />
     <input type="hidden" name="LeadDate__c" class = "outputdate" />
-
+    <input type=hidden name='captcha_settings' value='{"keyname":"WebToLeadLearning","fallback":"true","orgId":"00D7F000007E5tg","ts":""}'>
     
     
     <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" required="true" /><br>
@@ -32,7 +33,7 @@
     <input type="date" required="true" class="inputdate"/>
 
     <!-- Lead Date:<span class="dateInput dateOnlyInput"><input  id="00NGA00000XPwCc" name="00NGA00000XPwCc" size="12" type="text" /></span><br> -->
-    
+    <div class="g-recaptcha" data-sitekey="6LdkymkqAAAAAFgEN4mlo-2jUCy6rhqG2xxlZx3O"></div><br>
     <input type="submit" name="submit" class="submit">
     
     </form>
